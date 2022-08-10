@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debounce</title>
+    <style>
+      body {
+        height: 100vh;
+        background: linear-gradient(to top left, #13c3ea, #e85a87);
+        margin: 0 auto;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: 30px;
+      }
+      #input-div {
+        margin: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      input {
+        width: 60%;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+        font-size: 30px;
+      }
+      .text {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="input-div">
+      <input type="text" placeholder="Type Something..." />
+      <div class="text">
+        <b>Default: </b>
+        <span id="default"></span>
+      </div>
+      <div class="text">
+        <b>Debounce: </b>
+        <span id="debounce"></span>
+      </div>
+    </div>
+
+    <script src="./debounce.js"></script>
+  </body>
+</html>
