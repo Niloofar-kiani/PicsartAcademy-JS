@@ -7,19 +7,17 @@ function length(string) {
   while (string[count] != undefined) count++;
   return count;
 }
-function isSubstring(str, sub) {
+function subString(str, sub) {
   let strLng = length(str);
   let subLng = length(sub);
   if (subLng > strLng) return false;
-  for (let i = 0; i < strLng - subLng + 1; i++) {
+  for (let i = 0; i < strLng - 1; i++) {
     if (str[i] !== sub[0]) continue;
-    let exists = true;
-    for (let j = 1; j < subLng && exists; j++) {
+    for (let j = 1; j < subLng; j++) {
       if (str[i + j] === sub[j]) continue;
-      exists = false;
     }
-    if (exists) return i;
+    return i;
   }
   return false;
 }
-console.log(isSubstring("sarah", "sa"));
+console.log(subString("hello", "ll"));
