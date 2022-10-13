@@ -7,17 +7,20 @@ function length(string) {
   while (string[count] != undefined) count++;
   return count;
 }
+
 function subString(str, sub) {
   let strLng = length(str);
   let subLng = length(sub);
   if (subLng > strLng) return false;
-  for (let i = 0; i < strLng - 1; i++) {
+  for (let i = 0; i < strLng; i++) {
     if (str[i] !== sub[0]) continue;
-    for (let j = 1; j < subLng; j++) {
+    let key = true;
+    for (let j = 1; j < subLng && key; j++) {
       if (str[i + j] === sub[j]) continue;
+      key = false;
     }
-    return i;
+    if (key) return i;
   }
   return false;
 }
-console.log(subString("hello", "ll"));
+console.log(subString("hello", "elli"));
